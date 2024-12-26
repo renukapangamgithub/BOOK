@@ -11,7 +11,7 @@ import contactRoute from "./route/contact.route.js";
 const app=express();
 app.use(cors(
     {
-        origin:[""],
+        origin:["https://book-store-front-zeta.vercel.app"],
         methods:["POST","GET"],
         crendentials:true
     }
