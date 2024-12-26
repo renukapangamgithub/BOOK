@@ -15,7 +15,7 @@ function Contact() {
 
   const onSubmit = async (data) => {
     try {
-      const response = await axios.post("http://localhost:4001/contact", data);
+      const response = await axios.post("book-store-ltpo.vercel.app/contact", data);
 
       toast.success("Message sent successfully!");
       // Redirect to success page
