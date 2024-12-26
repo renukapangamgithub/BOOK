@@ -12,7 +12,7 @@ function Contact() {
     handleSubmit,
     formState: { errors },
   } = useForm();
-
+axios.defaults.withCredentials = true;
   const onSubmit = async (data) => {
     try {
       const response = await axios.post("book-store-ltpo.vercel.app/contact", data);
