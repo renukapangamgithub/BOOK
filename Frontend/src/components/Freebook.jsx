@@ -9,9 +9,11 @@ import axios from "axios";
 import Cards from "./Cards";
 function Freebook() {
   const [book, setBook] = useState([]);
+  axios.defaults.withCredentials = true;
   useEffect(() => {
     const getBook = async () => {
       try {
+        
         const res = await axios.get("book-store-ltpo.vercel.app/book");
        
         const data = res.data.filter((data) => data.category === "free");
