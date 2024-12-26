@@ -5,6 +5,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 function Login() {
   const { register, handleSubmit, formState: { errors } } = useForm();
+  axios.defaults.withCredentials = true;
   const onSubmit =async (data) => {
     const userInfo={
       email:data.email,
