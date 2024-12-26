@@ -9,6 +9,7 @@ function Signup() {
    const from=location.state?.from?.pathname || "/"
    const navigate=useNavigate();
   const { register, handleSubmit, formState: { errors } } = useForm();
+   axios.defaults.withCredentials = true;
   const onSubmit =async (data) => {
     const userInfo={
       fullname:data.fullname,
