@@ -17,7 +17,7 @@ function Signup() {
       password:data.password,
     }
     await axios 
-    .post("book-store-ltpo.vercel.app/user/signup", userInfo)
+    .post("https://book-store-ltpo.vercel.app/user/signup", userInfo)
     .then((res)=>{
       console.log(res.data)
       if(res.data){
