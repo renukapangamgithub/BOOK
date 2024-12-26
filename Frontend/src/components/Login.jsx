@@ -5,12 +5,13 @@ import axios from "axios";
 import toast from "react-hot-toast";
 function Login() {
   const { register, handleSubmit, formState: { errors } } = useForm();
+  axios.defaults.withCredentials = true;
   const onSubmit =async (data) => {
     const userInfo={
       email:data.email,
       password:data.password,
     }
-   await axios.post("http://localhost:4001/user/login",userInfo)
+   await axios.post("https://book-store-ltpo.vercel.app/user/login",userInfo)
     .then((res)=>{
       console.log(res.data)
       if(res.data){
