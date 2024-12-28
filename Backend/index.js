@@ -14,7 +14,7 @@ dotenv.config({ path: './config/config.env' }); // Specify the path to config.en
 
 // CORS configuration
 app.use(cors({
-    origin: ["https://book-front-web.vercel.app"],
+    origin: ["https://book-six-henna.vercel.app"],
     methods: ["POST", "GET"],
     credentials: true
 }));
