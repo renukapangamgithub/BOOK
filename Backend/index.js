@@ -12,12 +12,14 @@ const app = express();
 // Load environment variables from the config.env file located inside the config folder
 dotenv.config({ path: './config/config.env' }); // Specify the path to config.env
 
-// CORS configuration
-app.use(cors({
-    origin: ["https://book-front-web.vercel.app"],
-    methods: ["POST", "GET"],
+// Enhanced CORS configuration
+const corsOptions = {
+    origin: "https://book-front-web.vercel.app", // Your frontend's deployed URL
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Allow all relevant methods
+    allowedHeaders: ["Content-Type", "Authorization"], // Allow specific headers
     credentials: true
-}));
+};
+app.use(cors(corsOptions));
 
 app.use(express.json());
 
@@ -26,13 +28,13 @@ const URI = process.env.MongoDBURI;  // Now accessing MongoDBURI from config.env
 
 // Async function to connect to MongoDB
 const connectToMongoDB = async () => {
-  try {
-    await mongoose.connect(URI, { useNewUrlParser: true, useUnifiedTopology: true });
-    console.log("Connected to MongoDB");
-  } catch (error) {
-    console.error("Error connecting to MongoDB:", error);
-    process.exit(1); // Exit process if connection fails
-  }
+    try {
+        await mongoose.connect(URI, { useNewUrlParser: true, useUnifiedTopology: true });
+        console.log("Connected to MongoDB");
+    } catch (error) {
+        console.error("Error connecting to MongoDB:", error);
+        process.exit(1); // Exit process if connection fails
+    }
 };
 
 // Call the function to connect to MongoDB
