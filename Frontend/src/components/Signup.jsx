@@ -17,7 +17,7 @@ function Signup() {
       password:data.password,
     }
     await axios 
-    .post("https://book-api-beryl.vercel.app/user/signup", userInfo)
+    .post("https://book-backend-wnkq.onrender.com/user/signup", userInfo)
     .then((res)=>{
       console.log(res.data)
       if(res.data){
