@@ -15,7 +15,7 @@ function Contact() {
 axios.defaults.withCredentials = true;
   const onSubmit = async (data) => {
     try {
-      const response = await axios.post("https://book-api-beryl.vercel.app/contact", data);
+      const response = await axios.post("https://book-backend-wnkq.onrender.com", data);
 
       toast.success("Message sent successfully!");
       // Redirect to success page
