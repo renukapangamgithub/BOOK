@@ -14,7 +14,7 @@ dotenv.config({ path: './config/config.env' }); // Specify the path to config.en
 
 // Enhanced CORS configuration
 const corsOptions = {
-    origin: "https://book-front-web.vercel.app", // Your frontend's deployed URL
+    origin: "https://book-frontend-1810.onrender.com", // Your frontend's deployed URL
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Allow all relevant methods
     allowedHeaders: ["Content-Type", "Authorization"], // Allow specific headers
     credentials: true
